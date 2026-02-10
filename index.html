@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, interactive-widget=resizes-content">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <script>
+        const savedTheme = localStorage.getItem("theme");      
+        if (localStorage.getItem("theme") === "dark") {
+          document.documentElement.classList.add("dk-theme");
+        }
+    </script>      
+    <script rel="module" src="./src/script.js" defer></script>
+    <title>Todo List</title>
+    <link rel="stylesheet" crossorigin href="/assets/index-CMRjQwrl.css">
+  </head>
+  <body>
+    <main>
+    <div class="container">
+      <header>
+        <h1>Todo List</h1>
+        <button id="theme" class="btn">
+        </button>
+      </header>
+      <div class="layout-todo"> <!-- grid container -->
+        <div class="layout-new-todo"> <!-- left side --> 
+          <form class="new-todo-form"> 
+            <label class="sr-only" for="new-todo-text">Write a new todo</label>
+            <textarea id="new-todo-text" class="new-todo-text" placeholder="Add a new todo..."></textarea>     
+
+            <label class="new-todo-category-label text-sm" for="new-todo-category">Category (Optional)</label>
+            <div class="new-todo-category-wrapper">
+            </div>           
+
+            <label class="new-todo-dd-label text-sm" for="new-todo-dd">Due Date (Optional)</label>
+            <div class="new-todo-dd-wrapper"> 
+              <input id="new-todo-dd" class="new-todo-dd" type="date" autocomplete="off" tabindex="0"> 
+              <div class="date-overlay" aria-hidden="true">
+                <span></span>
+                <svg 
+                  xmlns="http://www.w3.org/2000/svg" 
+                  fill="none" 
+                  width="1.25rem"
+                  height="1.25rem"
+                  viewBox="0 0 24 24" 
+                  stroke-width="1.75" 
+                  stroke="currentColor" 
+                  aria-hidden="true"
+                >
+                  <path 
+                    stroke-linecap="round" 
+                    stroke-linejoin="round"
+                    d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" 
+                  />
+                </svg>
+              </div>
+            </div>
+
+            <button id="new-todo-add" class="new-todo-add text-lg" type="submit">
+              Add
+            </button>
+          </form>
+        </div>
+        <div class="layout-todo-list"> <!-- right side -->
+          <div class="todo-categories">
+          </div>
+          <div class="todo-list-wrapper">     
+          </div>          
+        </div>
+        <div class="layout-todo-footer text-sm"> <!--text under todos-->
+          <p class="todo-count">
+            <span></span> items
+          </p>
+          <div class="todo-footer-actions">
+            <button class="btn btn--clear-completed-todos">
+              Clear completed
+            </button>
+            <button class="btn btn--clear-all">
+              Clear all
+            </button>     
+          </div>
+          <button class="btn btn--bin">
+            <svg 
+              xmlns="http://www.w3.org/2000/svg" 
+              fill="none"
+              width="1.25rem"
+              height="1.25rem" 
+              viewBox="0 0 24 24" 
+              stroke-width="1.5" 
+              stroke="currentColor"
+              aria-hidden="true"            
+            >
+              <path 
+                stroke-linecap="round" 
+                stroke-linejoin="round" 
+                d="m14.74 9-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 0 1-2.244 2.077H8.084a2.25 2.25 0 0 1-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 0 0-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 0 1 3.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 0 0-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 0 0-7.5 0" 
+              />
+            </svg>
+          </button>        
+        </div>
+      </div>
+    </div>    
+    </main>
+    <dialog class="container-bin" aria-labelledby="bin-title"> 
+      <div class="bin-wrapper">
+        <header>
+          <h2 id="bin-title">Bin</h2>
+        </header>
+        <div class="layout-bin">
+          <div class="bin-list-wrapper">       
+          </div>         
+          <div class="layout-bin-footer text-sm">
+            <p class="bin-todo-count">
+              <span>0</span> items
+            </p>
+            <div class="bin-list-actions">
+              <button class="btn btn--restore-all">
+                Restore all
+              </button>                 
+              <button class="btn btn--delete-all text-sm-bold">
+                Delete all
+              </button>   
+            </div>
+          </div>
+        </div>
+      </div>
+    </dialog>  
+  </body>
+</html>
