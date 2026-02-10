@@ -1,0 +1,74 @@
+/* Headings */
+h1,
+h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+h1 {
+  margin-top: 4.38rem;
+  margin-bottom: 1.88rem;
+  font-size: var(--fs-xxl);
+  font-weight: var(--fw-md);
+}
+h2 {
+  margin-bottom: 1rem;
+  font-size: var(--fs-xl);
+  font-weight: var(--fw-md);
+}
+
+/* Main text */
+/* text-md properties are enabled by default on the body in _base.css */
+.text-lg {
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-md);
+  line-height: 1.2;
+}
+.text-md-bold {
+  font-size: var(--fs-md);
+  font-weight: var(--fw-md);
+}
+.text-sm {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-rg);
+}
+.text-sm-bold {
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-md);
+}
+.text-xs {
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-rg);
+  letter-spacing: -0.01rem;
+}
+
+/* Miscellaneous  */
+.placeholder {
+  font-size: var(--fs-md);
+  font-weight: var(--fw-rg);
+  color: var(--text-placeholder);
+}
+.past-due {
+  color: var(--red);
+}
+.is-completed {
+  color: var(--text-completed);
+  text-decoration: line-through;
+}
+
+/* Media queries */
+@media (orientation: landscape) and (height <= 38.5rem) {
+  h1 {
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (width <= 38.5rem) {
+  h2 {
+    margin-top: 1rem;
+    margin-bottom: 0.75rem;
+  }
+  .text-sm {
+    letter-spacing: -0.01rem;
+  }
+}

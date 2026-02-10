@@ -1,0 +1,77 @@
+/* Main button settings */
+.btn {
+  all: unset;
+  outline: revert;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+/* Category colors */
+.btn--cat0 {
+  background-color: var(--cat0);
+}
+.btn--cat1 {
+  background-color: var(--cat1);
+}
+.btn--cat2 {
+  background-color: var(--cat2);
+}
+.btn--cat3 {
+  background-color: var(--cat3);
+}
+.btn--cat4 {
+  background-color: var(--cat4);
+}
+.btn--dimmed-cat {
+  background-color: var(--gray);
+  border: 1px solid var(--black);
+}
+
+/* Checbox / clear / restore stroke color */
+.btn--checkbox svg,
+.btn--clear svg,
+.btn--restore svg {
+  stroke: var(--todo-svg-stroke);
+}
+
+/* Checkbox fill */
+.is-checked svg {
+  fill: var(--todo-svg-fill);
+}
+
+/* Increase touch target space */
+.btn--clear,
+.btn--bin,
+.btn--restore,
+.btn--delete {
+  padding: 0.75rem;
+  margin: -0.75rem;
+}
+.btn--clear-completed-todos,
+.btn--clear-all,
+.btn--delete-all {
+  padding-block: 0.88rem;
+  margin-block: -0.88rem;
+}
+.btn--checkbox {
+  padding: 0.5rem;
+  margin: -0.5rem;
+}
+.btn--clear-completed-todos,
+.btn--clear-all,
+.btn--bin {
+  padding-bottom: 2.25rem;
+  margin-bottom: 0;
+}
+
+/* Bin */
+.btn--bin svg {
+  display: block;
+  stroke: var(--text);
+}
+.btn--delete svg {
+  stroke: var(--red);
+}
+.btn--delete-all {
+  color: var(--red);
+}

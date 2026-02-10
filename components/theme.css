@@ -1,0 +1,25 @@
+/* Theme icon */
+#theme {
+  all: inherit;
+  outline: revert;
+  box-sizing: border-box;
+  cursor: pointer;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  transition: translate 200ms;
+}
+#theme:active {
+  translate: 1px 1px;
+}
+#theme svg {
+  fill: var(--theme-icon);
+}
+
+/* Media queries */
+@media (width <= 38.5rem) {
+  #theme {
+    top: 1rem;
+    right: 1rem;
+  }
+}

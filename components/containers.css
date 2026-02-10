@@ -1,0 +1,59 @@
+/* Main container */
+.container {
+  position: relative;
+  max-width: 87.5rem;
+  min-height: 56.25rem;
+  margin: 5.625rem auto 3.75rem;
+  padding-top: 1px;
+  padding-inline: 1.88rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--main-border);
+  background-color: var(--main-bg);
+  box-shadow: 0.5rem 0.5rem 1rem var(--box-shadow);
+}
+
+/* Bin container */
+.container-bin {
+  width: 55.63rem;
+  max-width: 55.63rem;
+  height: 43.13rem;
+  padding: 0 var(--p-md) 0;
+  padding-inline: var(--p-md);
+  border-radius: var(--radius);
+  border: 1px solid var(--main-border);
+  color: inherit;
+  background-color: var(--secondary-bg);
+}
+.container-bin::backdrop {
+  background-color: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(0.25rem);
+}
+
+/* Media queries */
+@media (width <= 86rem) {
+  .container {
+    width: 100%;
+    min-width: 0;
+    height: auto;
+    min-height: 100dvh;
+    margin: 0;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+  }
+  .container-bin {
+    max-width: 90vw;
+  }
+}
+
+@media (width <= 38.5rem) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    padding-inline: 1rem;
+  }
+  .container-bin {
+    height: 85vh;
+    padding-inline: var(--p-sm);
+  }
+}
