@@ -27,16 +27,17 @@
 
   /* categories */
   --cat0: #f2e3c9;
-  --cat1: #f3a08b;
+  --cat1: #f19a8d;
   --cat2: #b7a3e3;
   --cat3: #a6d6d6;
   --cat4: #cadcae;
 
   /* padding */
-  --p-md: 1.25rem;
-  --p-rg: 1rem;
+  --p-xl: 1.88rem;
+  --p-lg: 1.5rem;
+  --p-md: 1rem;
   --p-sm: 0.75rem;
-  --p-xs: 0.63rem;
+  --p-xs: 0.5rem;
 
   /* fonts */
   --fw-md: 500;
@@ -53,31 +54,21 @@
   --text-placeholder: var(--gray);
   --text-cat: var(--black);
   --red: #ef4b4b;
-  --radius: 0.63rem;
+  --radius: 0.75rem;
   --gap: 0.75rem 0.63rem;
 }
 .dk-theme {
-  /* --surface-100: #dbe5e3;
-  --surface-200: #86899c;
-  --surface-300: #3f4452;
-  --surface-400: #272e38;
-
-  --surface-100: #d0e6f0;
-  --surface-200: #8ba3b5;
-  --surface-300: #3c4a5c;
-  --surface-400: #212a36; */
-
   --surface-100: #d6e6ee;
-  --surface-200: #8fa2b1;
-  --surface-300: #3f4a58;
-  --surface-400: #232a33;
+  --surface-200: #98abba;
+  --surface-300: #3d4753;
+  --surface-400: #242b32;
 
   --main-bg: var(--surface-400);
   --secondary-bg: var(--surface-300);
   --main-border: var(--surface-300);
   --secondary-border: var(--surface-200);
   --layout-border: var(--surface-200);
-  --dashed-border: var(--surface-100);
+  --dashed-border: var(--surface-200);
   --text: var(--white);
   --text-completed: var(--surface-300);
   --theme-icon: var(--white);
@@ -88,12 +79,17 @@
 * {
   box-sizing: border-box;
 }
+html {
+  overscroll-behavior: none;
+}
 body {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  height: 100dvh;
   margin: 0;
   padding: 0;
   font-family: "Inter", sans-serif;
-  font-size: var(--fs-md);
-  font-weight: var(--fw-rg);
   color: var(--text);
   background-color: var(--secondary-bg);
   /* Thins out text on macOS (or else it's too bold) */
@@ -117,13 +113,17 @@ select {
 }
 
 /* Media queries */
-@media (width <= 38.5rem) {
+
+@media (width <= 90rem) {
+  body {
+    background-color: var(--main-bg);
+    letter-spacing: 0.01rem;
+  }
+}
+
+@media (width <= 48rem) {
   :root {
     --fs-xxl: var(--fs-xl);
     --fs-md: var(--fs-sm);
-  }
-
-  body {
-    letter-spacing: 0.01rem;
   }
 }

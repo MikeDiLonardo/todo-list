@@ -17,7 +17,7 @@
   grid-area: new-todo-text;
   width: 100%;
   margin-bottom: 1rem;
-  padding: var(--p-xs);
+  padding: var(--p-sm);
   border-radius: var(--radius);
   border: 2px dashed var(--dashed-border);
   background-color: var(--main-bg);
@@ -29,6 +29,8 @@
 }
 
 /* Base styles for inputs and wrappers */
+.new-todo-category-wrapper,
+.new-todo-dd-wrapper,
 .new-todo-category-wrapper,
 .new-todo-dd-wrapper,
 .new-todo-add,
@@ -52,10 +54,11 @@
 .new-todo-dd {
   /* new-todo-dd hidden behind date overlay */
   appearance: none;
+  width: 100%; /* make the entire surface clickable */
+  height: 100%; /* make the entire surface clickable */
   padding: 0;
   border: 0;
   cursor: inherit;
-  flex: 1;
 }
 
 /* Category */
@@ -66,26 +69,15 @@
   grid-area: select;
   position: relative;
 }
-/* Absolute position is used to make the entire wrapper is clickable */
+
 .new-todo-category {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
   padding-inline: var(--p-xs);
-}
-.new-todo-category option {
-  padding: 5px;
 }
 
 .new-todo-category-wrapper svg {
   position: absolute;
   right: var(--p-xs);
   pointer-events: none; /* Allow click to go through the icon to target the wrapper */
-}
-.dk-theme .new-todo-category option {
-  background-color: var(--surface-400);
-  color: var(--white);
 }
 
 /* Due date */
@@ -101,11 +93,7 @@
 .date-overlay {
   position: absolute;
   padding-inline: var(--p-xs);
-  pointer-events: none;
-}
-.new-todo-dd {
-  width: 100%;
-  height: 100%;
+  pointer-events: none; /* Allow click to go through the icon to target the wrapper */
 }
 
 /* Add */
@@ -117,20 +105,12 @@
 }
 
 /* media queries */
-@media (width <= 38.5rem) {
+@media (width <= 48rem) {
   .new-todo-form {
     grid-template-rows: 13.5rem auto auto auto;
   }
 
   .new-todo-text {
-    line-height: 1.5;
-  }
-}
-
-@media (orientation: landscape) and (height <= 38.5rem) {
-  .new-todo-form {
-    /* Reduce the first row (textarea) from 13.5rem to something smaller */
-    grid-template-rows: 10rem auto auto auto;
-    height: auto;
+    line-height: 1.45;
   }
 }

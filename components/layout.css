@@ -2,21 +2,27 @@
 .layout-todo {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
-  grid-template-rows: minmax(0, 41rem) auto;
+  grid-template-rows: minmax(0, 1fr) auto;
   grid-template-areas:
     "new-todo  todo-list"
     ".         todo-list-footer";
-  gap: 0.75rem 1.25rem;
+  gap: 0.75rem 1rem;
+  width: 100%;
+  height: 100%;
+  padding-inline: 1rem;
+  overflow-y: auto;
+  scrollbar-width: none;
 }
 
 /* Left side */
 .layout-new-todo {
   grid-area: new-todo;
-  height: 100%;
-  padding: 1.88rem var(--p-md) var(--p-md);
+  padding: var(--p-xl) var(--p-md) var(--p-lg);
   border-radius: var(--radius);
   border: 1px solid var(--layout-border);
   background-color: var(--secondary-bg);
+  overflow-y: auto;
+  scrollbar-width: none;
 }
 
 /* Right side */
@@ -25,11 +31,12 @@
   display: flex;
   flex-direction: column;
   gap: var(--gap);
-  min-height: 0;
-  padding: 1.88rem var(--p-md) 0;
+  padding: var(--p-xl) var(--p-md) 0;
   border-radius: var(--radius);
   border: 1px solid var(--layout-border);
   background-color: var(--secondary-bg);
+  overflow-y: auto;
+  scrollbar-width: none;
 }
 .layout-todo-footer {
   grid-area: todo-list-footer;
@@ -48,14 +55,12 @@
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  min-height: 0;
   overflow: hidden;
 }
 .layout-bin-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: auto;
 }
 
 /* Selection color adjustment */
@@ -66,26 +71,8 @@
 }
 
 /* Media queries */
-@media (width <= 86rem) {
-  .layout-todo {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
-    gap: 0.75rem 1rem;
-  }
-  .layout-new-todo {
-    padding: 1.88rem 1rem var(--p-md);
-  }
-  .layout-todo-list {
-    padding: 1.88rem 1rem 0;
-  }
-}
 
-@media (orientation: portrait) and (height <= 86rem) {
-  .layout-todo {
-    grid-template-rows: minmax(0, 1fr) auto;
-  }
-}
-
-@media (width <= 38.5rem) {
+@media (width <= 48rem) {
   .layout-todo {
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto;
@@ -94,22 +81,12 @@
       "todo-list"
       "todo-list-footer";
     gap: 1rem;
+    overflow-y: visible;
   }
-}
-
-@media (orientation: landscape) and (height <= 38.5rem) {
-  .layout-todo {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto;
-    grid-template-areas:
-      "new-todo"
-      "todo-list"
-      "todo-list-footer";
+  .layout-new-todo {
+    overflow-y: visible;
   }
-  .layout-new-todo,
   .layout-todo-list {
-    width: 100%;
-    min-width: 0;
-    height: auto;
+    overflow-y: visible;
   }
 }

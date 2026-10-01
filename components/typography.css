@@ -2,11 +2,10 @@
 h1,
 h2 {
   text-align: center;
-  margin-bottom: 1rem;
 }
 h1 {
-  margin-top: 4.38rem;
-  margin-bottom: 1.88rem;
+  margin-top: 3rem;
+  margin-bottom: var(--p-xl);
   font-size: var(--fs-xxl);
   font-weight: var(--fw-md);
 }
@@ -17,11 +16,18 @@ h2 {
 }
 
 /* Main text */
-/* text-md properties are enabled by default on the body in _base.css */
-.text-lg {
+.text-lg-bold {
   font-size: var(--fs-lg);
   font-weight: var(--fw-md);
   line-height: 1.2;
+}
+.text-md-bold {
+  font-size: var(--fs-md);
+  font-weight: var(--fw-md);
+}
+.text-md {
+  font-size: var(--fs-md);
+  font-weight: var(--fw-rg);
 }
 .text-md-bold {
   font-size: var(--fs-md);
@@ -56,16 +62,9 @@ h2 {
 }
 
 /* Media queries */
-@media (orientation: landscape) and (height <= 38.5rem) {
-  h1 {
-    margin-top: 2rem;
-    margin-bottom: 1.5rem;
-  }
-}
 
-@media (width <= 38.5rem) {
+@media (width <= 48rem) {
   h2 {
-    margin-top: 1rem;
     margin-bottom: 0.75rem;
   }
   .text-sm {

@@ -27,7 +27,7 @@
   border: 1px solid var(--black);
 }
 
-/* Checbox / clear / restore stroke color */
+/* Checkbox / clear / restore stroke color */
 .btn--checkbox svg,
 .btn--clear svg,
 .btn--restore svg {

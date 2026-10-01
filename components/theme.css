@@ -5,19 +5,27 @@
   box-sizing: border-box;
   cursor: pointer;
   position: absolute;
-  top: 30px;
-  right: 30px;
+  top: var(--p-xl);
+  right: var(--p-xl);
   transition: translate 200ms;
 }
 #theme:active {
-  translate: 1px 1px;
+  translate: 2px 2px;
 }
 #theme svg {
+  margin: -4px;
   fill: var(--theme-icon);
 }
 
 /* Media queries */
-@media (width <= 38.5rem) {
+@media (width <= 90rem) {
+  /*   #theme {
+    top: 0;
+    right: 0;
+  }   */
+}
+
+@media (width <= 48rem) {
   #theme {
     top: 1rem;
     right: 1rem;
