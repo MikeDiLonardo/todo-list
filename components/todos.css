@@ -271,10 +271,6 @@
 }
 
 @media (width <= 48rem) {
-/*   .todo-list-wrapper {
-    max-height: 75vh;
-    min-height: 55vh;
-  } */
   .todo-footer-actions {
     gap: 1rem;
   }   
