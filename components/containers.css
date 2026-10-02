@@ -8,9 +8,9 @@
   width: 90vw;
   height: 80dvh;
   min-height: 0;
-  padding: var(--p-md);
   border-radius: var(--radius);
   border: 1px solid var(--main-border);
+  padding: var(--p-md);
   background-color: var(--main-bg);
   box-shadow: 0.5rem 0.5rem 1rem var(--box-shadow);
 }
@@ -19,10 +19,10 @@
 .container-bin {
   width: 55.63rem;
   height: 43.13rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--main-border);  
   padding: 0 var(--p-md) 0;
   padding-inline: var(--p-md);
-  border-radius: var(--radius);
-  border: 1px solid var(--main-border);
   background-color: var(--secondary-bg);
   color: inherit;
 }
@@ -46,7 +46,7 @@
   }
 }
 
-@media (width <= 48rem) {
+@media (width <= 66rem) {
   .container {
     padding-inline: 0;
   }

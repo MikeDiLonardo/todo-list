@@ -3,10 +3,10 @@
   all: inherit;
   outline: revert;
   box-sizing: border-box;
-  cursor: pointer;
   position: absolute;
   top: var(--p-xl);
   right: var(--p-xl);
+  cursor: pointer;  
   transition: translate 200ms;
 }
 #theme:active {
@@ -18,14 +18,8 @@
 }
 
 /* Media queries */
-@media (width <= 90rem) {
-  /*   #theme {
-    top: 0;
-    right: 0;
-  }   */
-}
 
-@media (width <= 48rem) {
+@media (width <= 66rem) {
   #theme {
     top: 1rem;
     right: 1rem;

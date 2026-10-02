@@ -17,9 +17,9 @@ h2 {
 
 /* Main text */
 .text-lg-bold {
+  line-height: 1.2;
   font-size: var(--fs-lg);
   font-weight: var(--fw-md);
-  line-height: 1.2;
 }
 .text-md-bold {
   font-size: var(--fs-md);
@@ -42,16 +42,16 @@ h2 {
   font-weight: var(--fw-md);
 }
 .text-xs {
+  letter-spacing: -0.01rem;
   font-size: var(--fs-xs);
   font-weight: var(--fw-rg);
-  letter-spacing: -0.01rem;
 }
 
 /* Miscellaneous  */
 .placeholder {
+  color: var(--text-placeholder);
   font-size: var(--fs-md);
   font-weight: var(--fw-rg);
-  color: var(--text-placeholder);
 }
 .past-due {
   color: var(--red);
@@ -63,7 +63,7 @@ h2 {
 
 /* Media queries */
 
-@media (width <= 48rem) {
+@media (width <= 66rem) {
   h2 {
     margin-bottom: 0.75rem;
   }
